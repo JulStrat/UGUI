@@ -446,6 +446,40 @@ void UG_DrawArc( UG_S16 x0, UG_S16 y0, UG_S16 r, UG_U8 s, UG_COLOR c )
    }
 }
 
+void UG_DrawHLine( UG_S16 x1, UG_S16 x2, UG_S16 y, UG_COLOR c ) {
+  UG_S16 x;
+
+  if (x1 > x2) {
+    x = x2;
+    x2 = x1;
+    x1 = x;
+  }
+  (* Is hardware acceleration available? *)
+  if (gui->driver[DRIVER_DRAW_LINE].state & DRIVER_ENABLED) {
+     if(((UG_RESULT(*)(UG_S16 x1, UG_S16 y, UG_S16 x2, UG_S16 y, UG_COLOR c))gui->driver[DRIVER_DRAW_LINE].driver)(x1,y,x2,y,c) == UG_RESULT_OK ) return;
+  }
+
+  for (x = x1; x <= x2; x++)
+      gui->pset(x, y, c);
+}	
+
+void UG_DrawVLine( UG_S16 y1, UG_S16 y2, UG_S16 x, UG_COLOR c ) {
+  UG_S16 y;
+
+  if (y1 > y2) {
+    y = y2;
+    y2 = y1;
+    y1 = y;
+  }
+  (* Is hardware acceleration available? *)
+  if (gui->driver[DRIVER_DRAW_LINE].state & DRIVER_ENABLED) {
+     if(((UG_RESULT(*)(UG_S16 x, UG_S16 y1, UG_S16 x, UG_S16 y2, UG_COLOR c))gui->driver[DRIVER_DRAW_LINE].driver)(x,y1,x,y2,c) == UG_RESULT_OK ) return;
+  }
+
+  for (y = y1; y <= y2; y++)
+      gui->pset(x, y, c);
+}
+
 void UG_DrawLine( UG_S16 x1, UG_S16 y1, UG_S16 x2, UG_S16 y2, UG_COLOR c )
 {
    UG_S16 n, dx, dy, sgndx, sgndy, dxabs, dyabs, x, y, drawx, drawy;

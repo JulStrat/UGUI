@@ -894,6 +894,10 @@ void UG_DrawPixel( UG_S16 x0, UG_S16 y0, UG_COLOR c );
 void UG_DrawCircle( UG_S16 x0, UG_S16 y0, UG_S16 r, UG_COLOR c );
 void UG_FillCircle( UG_S16 x0, UG_S16 y0, UG_S16 r, UG_COLOR c );
 void UG_DrawArc( UG_S16 x0, UG_S16 y0, UG_S16 r, UG_U8 s, UG_COLOR c );
+
+void UG_DrawHLine( UG_S16 x1, UG_S16 x2, UG_S16 y, UG_COLOR c );
+void UG_DrawVLine( UG_S16 y1, UG_S16 y2, UG_S16 x, UG_COLOR c );
+
 void UG_DrawLine( UG_S16 x1, UG_S16 y1, UG_S16 x2, UG_S16 y2, UG_COLOR c );
 void UG_PutString( UG_S16 x, UG_S16 y, char* str );
 void UG_PutChar( char chr, UG_S16 x, UG_S16 y, UG_COLOR fc, UG_COLOR bc );
