@@ -1758,8 +1758,7 @@ UG_RESULT UG_WindowSetXStart( UG_WINDOW* wnd, UG_S16 xs )
    if ( (wnd != NULL) && (wnd->state & WND_STATE_VALID) )
    {
       wnd->xs = xs;
-      if ( UG_WindowResize( wnd, wnd->xs, wnd->ys, wnd->xe, wnd->ye) == UG_RESULT_FAIL ) return UG_RESULT_FAIL;
-      return UG_RESULT_OK;
+      return UG_WindowResize( wnd, wnd->xs, wnd->ys, wnd->xe, wnd->ye );
    }
    return UG_RESULT_FAIL;
 }
@@ -1769,8 +1768,7 @@ UG_RESULT UG_WindowSetYStart( UG_WINDOW* wnd, UG_S16 ys )
    if ( (wnd != NULL) && (wnd->state & WND_STATE_VALID) )
    {
       wnd->ys = ys;
-      if ( UG_WindowResize( wnd, wnd->xs, wnd->ys, wnd->xe, wnd->ye) == UG_RESULT_FAIL ) return UG_RESULT_FAIL;
-      return UG_RESULT_OK;
+      return UG_WindowResize( wnd, wnd->xs, wnd->ys, wnd->xe, wnd->ye );
    }
    return UG_RESULT_FAIL;
 }
@@ -1780,8 +1778,7 @@ UG_RESULT UG_WindowSetXEnd( UG_WINDOW* wnd, UG_S16 xe )
    if ( (wnd != NULL) && (wnd->state & WND_STATE_VALID) )
    {
       wnd->xe = xe;
-      if ( UG_WindowResize( wnd, wnd->xs, wnd->ys, wnd->xe, wnd->ye) == UG_RESULT_FAIL ) return UG_RESULT_FAIL;
-      return UG_RESULT_OK;
+      return UG_WindowResize( wnd, wnd->xs, wnd->ys, wnd->xe, wnd->ye );
    }
    return UG_RESULT_FAIL;
 }
@@ -1791,8 +1788,7 @@ UG_RESULT UG_WindowSetYEnd( UG_WINDOW* wnd, UG_S16 ye )
    if ( (wnd != NULL) && (wnd->state & WND_STATE_VALID) )
    {
       wnd->ye = ye;
-      if ( UG_WindowResize( wnd, wnd->xs, wnd->ys, wnd->xe, wnd->ye) == UG_RESULT_FAIL ) return UG_RESULT_FAIL;
-      return UG_RESULT_OK;
+      return UG_WindowResize( wnd, wnd->xs, wnd->ys, wnd->xe, wnd->ye );
    }
    return UG_RESULT_FAIL;
 }
